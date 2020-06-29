@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="author" content="Bara C Tudor">
+  <meta name="keywords" content="music,guitar,notes compose">
+  <link rel="stylesheet" type="text/css" href="/css/general.css">
+  <link rel="stylesheet" type="text/css" href="/css/main-menu.css">
+  <title>Compune-mă</title>
+</head>
+
+<body>
+
+  <%- include("../fragmente/header.ejs") %>
+
+  <main>
+    <form method="post" action="/login-action">
+      <label for="user">User</label><br />
+      <input type="text" id="user" name="username" value=""><br /><br />
+      <label for="password">Password</label><br />
+      <input type="password" id="password" name="password" value=""><br /><br />
+      <input type="submit" value="Login">
+
+      <% if(locals.login_status == "ERR-PWD") { %>
+      <p style="color: red;"> Parola gresita pentru <%= locals.username %></p>
+
+      <% } else if(locals.login_status == "ERR-USER") {%>
+      <p style="color: red;"> User <%= locals.username %> nu exista</p>
+
+      <% } else if(locals.login_status == "OK") {%>
+      <p style="color: green;"> User <%= locals.username %> este deja logat; vrei sa te logezi in alt cont?</p>
+      <% } %>
+    </form>
+  </main>
+
+</body>
+
+</html>

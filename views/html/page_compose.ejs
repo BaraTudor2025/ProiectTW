@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="author" content="Bara C Tudor">
+  <meta name="keywords" content="music,guitar,notes,compose">
+  <link rel="stylesheet" type="text/css" href="/css/general.css">
+  <link rel="stylesheet" type="text/css" href="/css/main-menu.css">
+  <link rel="stylesheet" type="text/css" href="/css/compose.css">
+  <script src="/js/music_logic.js"></script>
+  <script src="/js/compose_script.js"></script>
+  <title>Compune-mă</title>
+</head>
+
+<body>
+
+  <%- include("../fragmente/header.ejs") %>
+  <main>
+
+    <div class="simple-box">
+      <div id="note-list">
+        <p>Notes:</p>
+        <button id="note-b" type="button">b</button>
+        <button id="note-E" type="button">E</button>
+        <button id="note-F" type="button">F</button>
+        <button id="note-G" type="button">G</button>
+        <button id="note-A" type="button">A</button>
+        <button id="note-B" type="button">B</button>
+        <button id="note-C" type="button">C</button>
+        <button id="note-D" type="button">D</button>
+        <button id="note-e" type="button">e</button>
+        <button id="note-r" type="button">r</button>
+        <button id="note-R" type="button">R</button>
+        <button id="note-p" type="button">p</button>
+        <button id="note-P" type="button">P</button>
+      </div>
+      <br />
+
+      <div>
+        <p>Modifiers:</p>
+        <button id="modifier-bemol" type="button">Bemol /alt-b</button>
+        <button id="modifier-sharp" type="button">Sharp /alt-s</button>
+      </div>
+      <br />
+    </div>
+
+    <div id="note-string-container" class="simple-box">
+      <h3>The song so far...</h3>
+      <ul id="note-string">
+      </ul>
+      <!--  <p id="note-string">C D Eb F G Ab Bb</p> -->
+      <button id="delete-note-button" type="button">Delete last note</button><br />
+      <button id="undo-note-button" type="button">Undo Delete</button><br />
+      <!-- <button id="reset-undo-button" type="button">Reset Undo History</button><br /> -->
+    </div>
+
+    <div class="simple-box">
+      <button id="play-button" type="button">Play</button><br /><br />
+      <label for="song-name">Name</label>
+      <input id="song-name-input" type="text" name="song-name" value=""><br />
+      <button id="save-song-button" type="button">Save</button>
+    </div>
+  </main>
+
+</body>
+
+</html>

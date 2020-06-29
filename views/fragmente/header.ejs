@@ -1,0 +1,31 @@
+<header>
+  <nav>
+    <ul class="main-menu">
+      <li class="title">Compune-mă</li>
+      <li><a href="/">Home</a></li>
+
+      <% if(locals.user) { %>
+
+      <li class="sub-main-menu">
+        <a href="/page_compose">Compose</a>
+        <ul style="left: 10px;">
+          <li><a href="/page_songs">Songs</a></li>
+        </ul>
+      </li>
+
+      <li class="sub-main-menu">
+        <a href="/profile?id=<%=locals.user.id%>"> <%= locals.user.username %> </a>
+        <ul>
+          <li><a href="/logout-action">Logout</a></li>
+        </ul>
+      </li>
+
+      <% } else { %>
+
+      <li><a href="/page_login">Login</a></li>
+      <li><a href="/page_signup">Sign Up</a></li>
+
+      <% } %>
+    </ul>
+  </nav>
+</header>

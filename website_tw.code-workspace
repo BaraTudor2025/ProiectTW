@@ -1,0 +1,27 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"editor.insertSpaces": true,
+		"editor.tabSize": 2,
+		"editor.trimAutoWhitespace": true,
+		"editor.wrappingIndent": "same",
+		"editor.wrappingColumn": 100,
+		"editor.formatOnSave": true,
+		"html.format.wrapAttributes": "preserve-aligned",
+		"html.format.wrapLineLength": 0,
+		"editor.wordWrap": "wordWrapColumn",
+		"editor.wordWrapColumn": 120,
+		"liveSassCompile.settings.formats": [
+			{
+				"format": "expanded",
+				"extensionName": ".css",
+				"savePath": "/assets/css/"
+			}
+		],
+		"liveSassCompile.settings.generateMap": false
+	}
+}

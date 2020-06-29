@@ -1,0 +1,11 @@
+#compose button{
+  padding: 10px;
+}
+
+#note-string{
+  display: block;
+}
+
+.song-name{
+  display: inline-block;
+}

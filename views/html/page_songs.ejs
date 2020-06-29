@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="author" content="Bara C Tudor">
+  <meta name="keywords" content="music,guitar,notes,compose">
+  <link rel="stylesheet" type="text/css" href="/css/general.css">
+  <link rel="stylesheet" type="text/css" href="/css/main-menu.css">
+  <link rel="stylesheet" type="text/css" href="/css/song_display.css">
+  <script src="/js/ejs.min.js"></script>
+  <script src="/js/music_logic.js"></script>
+  <script src="/js/songs_script.js"></script>
+  <title>Compune-mă</title>
+</head>
+
+<body>
+
+  <%- include("../fragmente/header.ejs") %>
+
+  <main>
+    <input id="filter-autor" placeholder="search for author" type="text" value="">
+    <h4>Numar de cantece:<div id="num-songs" style="display: inline">0</div>
+    </h4>
+
+    <br /><br />
+
+    <li class="song-list-title">
+      <div>Cantece:</div>
+    </li>
+
+    <ul id="song-list">
+    </ul>
+  </main>
+
+</body>
+
+</html>

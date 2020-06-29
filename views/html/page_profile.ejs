@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="author" content="Bara C Tudor">
+  <meta name="keywords" content="music,guitar,notes,compose">
+  <link rel="stylesheet" type="text/css" href="/css/general.css">
+  <link rel="stylesheet" type="text/css" href="/css/main-menu.css">
+  <link rel="stylesheet" type="text/css" href="/css/song_display.css">
+
+  <!-- <script src="/js/ejs.min.js"></script>
+  <script src="/js/songs_script.js"></script> -->
+  <script src="/js/music_logic.js"></script>
+  <script src="/js/delete_songs_script.js"></script>
+  <title>Compune-mă</title>
+</head>
+
+<body>
+
+  <%- include("../fragmente/header.ejs") %>
+
+  <main>
+
+    <p>Profilul lui <%= profile.username %> </p>
+    <!-- <p>Sex: <%= profile.sex %> </p> -->
+    <br>
+    <li class="song-list-title">
+      <div>Cantece:</div>
+    </li>
+
+    <ul id="song-list">
+      <% for(let i=0; i < profile.songs.length; ++i) { %>
+      <li class="simple-box">
+        Nume: <div class="song-name" style="display:inline-block;"><%=profile.songs[i].name%></div>
+        <ul class='note-string'>
+          <% for(let j=0; j < profile.songs[i].notes.length; ++j) { %>
+          <li style='display: inline'><%= profile.songs[i].notes[j] %></li>
+          <% } %>
+        </ul>
+        <button type='button' onclick='playNotesButton(this)'>play</button>
+        <% if(user && user.id == profile.id) { %>
+        <button style="margin-left: 50px" type='button' onclick='deleteSong(this, <%=profile.id%>)'>delete</button>
+        <% } %>
+      </li>
+      <% } %>
+    </ul>
+  </main>
+
+</body>
+
+</html>

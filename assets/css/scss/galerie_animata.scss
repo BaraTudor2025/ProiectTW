@@ -1,0 +1,69 @@
+$imagNumber: 5;
+$frameSeconds: 3s;
+$animationSeconds: $imagNumber * $frameSeconds;
+$width: 400px;
+$height: 300px;
+
+.galerie{
+  width: $width;
+  height: $height;
+  border: 1px solid black;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 5rem;
+
+  figure {
+    position: absolute;
+    width: $width;
+    height: $height;
+    left: 0;
+    top: 0;
+    animation-name: galerie_animata_muzica;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-duration: $animationSeconds;
+    transform-origin: center center;
+    img{
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+@function strip-unit($number) {
+  @if type-of($number) == 'number' and not unitless($number) {
+    @return $number / ($number * 0 + 1);
+  }
+
+  @return $number;
+}
+
+$sec: $animationSeconds;
+@for $i from 1 through strip-unit($imagNumber){
+  $sec: $sec - $frameSeconds;
+  .galerie figure:nth-child(#{$i}){
+    animation-delay: $sec;
+  }
+}
+
+@keyframes galerie_animata_muzica {
+  0% {z-index:10; }
+  5% {transform: scale(1) rotate(0deg)}
+  17% {transform: scale(0.0) rotate(360deg);}
+  #{(100% / $imagNumber) + 0.003} { transform: scale(0.001); z-index: -1;}
+  #{100% - (100 / $imagNumber) - 1 + .999} {transform: scale(1) rotate(0deg); z-index: -1;}
+  #{100% - (100 / $imagNumber)}{z-index: 0;}
+  100% {z-index: 0;}
+}
+
+/*
+@keyframes galerie_animata_muzica {
+  0% {z-index:10; }
+  5% {transform: scale(1) rotate(0deg)}
+  17% {transform: scale(0.0) rotate(360deg);}
+  20.001% { transform: scale(0.001); z-index: -1;}
+  79.99999999% {transform: scale(1) rotate(0deg); z-index: -1;}
+  80%{z-index: 0;}
+  100% {z-index: 0;}
+}
+*/

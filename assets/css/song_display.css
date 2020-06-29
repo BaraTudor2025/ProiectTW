@@ -1,0 +1,15 @@
+/*#song-list>li.title{*/
+.song-list-title{
+    display: block;
+    text-decoration: underline;
+    padding-bottom: 20px;
+}
+
+#song-list p {
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+.note-string {
+    padding-top: 3px;
+}

@@ -1,0 +1,128 @@
+.galerie {
+  width: 400px;
+  height: 300px;
+  border: 1px solid black;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 5rem;
+}
+
+.galerie figure {
+  position: absolute;
+  width: 400px;
+  height: 300px;
+  left: 0;
+  top: 0;
+  -webkit-animation-name: galerie_animata_muzica;
+          animation-name: galerie_animata_muzica;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-duration: 15s;
+          animation-duration: 15s;
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+}
+
+.galerie figure img {
+  width: 100%;
+  height: 100%;
+}
+
+.galerie figure:nth-child(1) {
+  -webkit-animation-delay: 12s;
+          animation-delay: 12s;
+}
+
+.galerie figure:nth-child(2) {
+  -webkit-animation-delay: 9s;
+          animation-delay: 9s;
+}
+
+.galerie figure:nth-child(3) {
+  -webkit-animation-delay: 6s;
+          animation-delay: 6s;
+}
+
+.galerie figure:nth-child(4) {
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
+}
+
+.galerie figure:nth-child(5) {
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+
+@-webkit-keyframes galerie_animata_muzica {
+  0% {
+    z-index: 10;
+  }
+  5% {
+    -webkit-transform: scale(1) rotate(0deg);
+            transform: scale(1) rotate(0deg);
+  }
+  17% {
+    -webkit-transform: scale(0) rotate(360deg);
+            transform: scale(0) rotate(360deg);
+  }
+  20.003% {
+    -webkit-transform: scale(0.001);
+            transform: scale(0.001);
+    z-index: -1;
+  }
+  79.999% {
+    -webkit-transform: scale(1) rotate(0deg);
+            transform: scale(1) rotate(0deg);
+    z-index: -1;
+  }
+  80% {
+    z-index: 0;
+  }
+  100% {
+    z-index: 0;
+  }
+}
+
+@keyframes galerie_animata_muzica {
+  0% {
+    z-index: 10;
+  }
+  5% {
+    -webkit-transform: scale(1) rotate(0deg);
+            transform: scale(1) rotate(0deg);
+  }
+  17% {
+    -webkit-transform: scale(0) rotate(360deg);
+            transform: scale(0) rotate(360deg);
+  }
+  20.003% {
+    -webkit-transform: scale(0.001);
+            transform: scale(0.001);
+    z-index: -1;
+  }
+  79.999% {
+    -webkit-transform: scale(1) rotate(0deg);
+            transform: scale(1) rotate(0deg);
+    z-index: -1;
+  }
+  80% {
+    z-index: 0;
+  }
+  100% {
+    z-index: 0;
+  }
+}
+
+/*
+@keyframes galerie_animata_muzica {
+  0% {z-index:10; }
+  5% {transform: scale(1) rotate(0deg)}
+  17% {transform: scale(0.0) rotate(360deg);}
+  20.001% { transform: scale(0.001); z-index: -1;}
+  79.99999999% {transform: scale(1) rotate(0deg); z-index: -1;}
+  80%{z-index: 0;}
+  100% {z-index: 0;}
+}
+*/

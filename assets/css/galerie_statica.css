@@ -1,0 +1,48 @@
+#galerie-statica>*{
+  text-align: center;
+}
+
+#galerie-statica p{
+  margin-bottom: 10px;
+}
+
+.galerie-statica {
+  display:grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-row-gap:0.5em;
+  grid-column-gap:0.5em;
+  padding-left: 15%;
+  padding-right: 15%;
+  width: 70%;
+  height: 70%;
+}
+
+.galerie-statica img{
+  width: 100%;
+  border-radius: 7px;
+}
+.galerie-statica figcaption{
+  text-align:center;
+}
+
+.galerie-statica figure:hover {
+  box-shadow: grey 0px 0px 7px 2px;
+  border-radius: 7px;
+}
+.galerie-statica figure{
+  align-self: center;
+  transition: all 0.2s linear;
+}
+
+.galerie-statica>figure:nth-child(3){
+  grid-area: 2/3/3/4;
+}
+.galerie-statica>figure:nth-child(4){
+  grid-area: 2/1/3/2;
+}
+.galerie-statica>figure:nth-child(5){
+  grid-area: 3/2/4/3;
+}
+.galerie-statica>figure:nth-child(6){
+  grid-area: 3/3/4/4;
+}

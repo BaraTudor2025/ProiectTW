@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="author" content="Bara C Tudor">
+  <meta name="keywords" content="music,guitar,notes,compose">
+  <link rel="stylesheet" type="text/css" href="/css/general.css">
+  <link rel="stylesheet" type="text/css" href="/css/main-menu.css">
+  <title>Compune-mă</title>
+</head>
+
+<body>
+
+  <%- include("../fragmente/header.ejs") %>
+
+  <main>
+    <form method="post" action="/register-action">
+
+      <label for="user">User</label><br />
+      <input type="text" id="user" name="username"><br /><br />
+
+      <label> Sex </label> <br>
+      <input type="radio" id="male" name="gender" value="male">
+      <label for="male">Male</label><br>
+      <input type="radio" id="female" name="gender" value="female">
+      <label for="female">Female</label><br> <br>
+
+      <label for="password">Password</label><br />
+      <input type="password" id="password" name="password"><br /><br />
+
+      <label for="repeat_password">Repeat Password</label><br />
+      <input type="password" id="repeat_password" name="repeat_password"><br /><br />
+
+      <input type="submit" value="Sign up">
+    </form>
+  </main>
+
+</body>
+
+</html>

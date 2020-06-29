@@ -1,0 +1,83 @@
+.taiat{
+    text-decoration-line: line-through;
+    text-decoration-style: solid;
+    text-decoration-color: red;
+    text-decoration-thickness: 5px;
+}
+
+body{
+    background-image: url('./../images/y-so-serious-white.png');
+}
+
+header{
+    position: sticky;
+    z-index: 20;
+    width: 100vw;
+    height:min-content;
+}
+
+.main-menu{
+    position: sticky;
+    display: inline-block;
+    /*display: inline-block;*/
+    width: 100vw;
+    padding: 0px;
+    color: white;
+}
+
+.main-menu-title {
+    color: black;
+    justify-self: flex-start;
+    align-self: flex-start;
+    align-items: flex-start;
+}
+
+/*
+nav{
+    position: relative;
+    /*float: right;*/
+    /*display: inline-block;*/
+    /*background:linear-gradient(rgba(33,00,00,0) 0%, rgba(33,00,00,0.7) 35%, rgba(33,00,00,0.7) 65%, rgba(33,00,00,0) 100%);*/
+    /*background:linear-gradient(rgba(21, 106, 117, 0) 0%, rgba(21, 106, 117, 0.7) 35%, rgba(21, 106, 117, 0) 65%, rgba(21, 106, 117, 0) 100%);
+    /*width:100vw;
+    padding: 0px;
+    color:white;
+}
+*/
+
+.main-menu ul{
+    text-transform: uppercase;
+    display: flex;
+    vertical-align: middle;
+    background-color: rgb(14, 70, 80);
+    justify-content: flex-end;
+    align-items: flex-end;
+    height: 100%;
+    font-size: 1vw;
+    margin-top: 0px;
+}
+
+.main-menu li{
+    display: inline-block;
+    margin-right: 2vw;
+    padding: 0px;
+    top: 0px;
+    transition: ease-in-out 0.2s;
+}
+
+/*.main-menu li*/
+.title {
+    display: inline-block;
+    justify-self: start;
+    align-self: center;
+    padding-right: 52%;
+    top: 0px;
+    color:white;
+}
+
+nav li a{
+    display: block;
+    padding: 2vh;
+    color:white;
+}
+/**/

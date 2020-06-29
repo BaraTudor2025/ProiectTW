@@ -1,0 +1,114 @@
+
+.galerie{
+	width:400px;
+	height:300px;
+	border:1px solid black;
+	position:relative;
+	overflow:hidden;
+
+	margin-bottom:5rem;
+}
+/*
+.galerie figcaption{
+	position:absolute;
+	bottom:0;
+	background:rgba(255,255,255,0.7);
+	width:100%;
+	text-align:center;
+}
+*/
+.galerie figure{
+	position:relative;
+	width:400px;
+	height:300px;
+}
+
+#galerie_exemplu figure{	
+	position:absolute;
+	left:0;
+	top:0;
+	animation-name:galu_meu;
+	animation-timing-function:linear;
+	animation-iteration-count:infinite;
+    animation-duration: 10s;
+	transform-origin: center center;
+}
+
+#galerie_exemplu img {
+    width: 100%;
+    height: 100%;
+}
+
+/*
+#galerie_exemplu figure:nth-of-type(5){
+    animation-delay: 8s;
+}
+#galerie_exemplu figure:nth-of-type(4){
+    animation-delay: 6s;
+}
+#galerie_exemplu figure:nth-of-type(3){
+    animation-delay: 4s;
+}
+#galerie_exemplu figure:nth-of-type(2){
+    animation-delay: 2s;
+}
+#galerie_exemplu figure:nth-of-type(1){
+    animation-delay: 0s;
+}
+*/
+
+
+#galerie_exemplu figure:nth-of-type(5){
+    animation-delay: 0s;
+}
+#galerie_exemplu figure:nth-of-type(4){
+    animation-delay: 2s;
+}
+#galerie_exemplu figure:nth-of-type(3){
+    animation-delay: 4s;
+}
+#galerie_exemplu figure:nth-of-type(2){
+    animation-delay: 6s;
+}
+#galerie_exemplu figure:nth-of-type(1){
+    animation-delay: 8s;
+}
+
+
+/*cum calculam timpii:
+- avem 7 poze; vrem pentru fiecare un timp de afisare de 2 secunde si o trecere spre urmatoarea poza de 1 secunda
+- rezulta 3 secunde pentru fiecare imagine
+- 7imagini * 3secunde =21 secunde in total pentru animatie (animation-duration) si fiecare poza cu un delay = 3* numarul de ordine
+- momentul in care trebuie ascunsa poza si pusa in spatele celorlalte (ca sa isi astepte randul pentru noua animatie:
+il calculam cu formula  timp_afisare(normal+trecerea la urmatoarea poza)/timp_total*100 = 3/21*100 =  14.28 (aproximativ)
+- calculam 100-14.28=85.72 - la acest moment imaginea trebuie sa se vada in spatele imaginii care se afiseaza in mod curent (ca sa se vada si cat timp se realizeaza efectul de schimbare a imaginii
+*/
+
+@keyframes gal_exemplu{ 
+	0% {z-index:10;opacity:1;} /*perioada 0-5% in care se afiseaza fara efect */
+	5% {opacity:1;transform:skewX(0deg);}
+	13%{opacity:1;transform:skewX(85deg)} /* de  aici doresc sa descresc si opacitatea;*/
+	14.28%{z-index:10;opacity:0;transform:skewX(90deg);}
+	14.281%{z-index:-1;}/* il ascund cat mai in spate sa nu vina peste imaginile care erau mai sus in html decat el*/
+	85.71999999%{opacity:1;transform:skewX(0deg);z-index:-1;}	
+	85.72%{z-index:0;}/*setez z-index la 0 ca sa revina la ordinea normala de afisare*/
+	100%{opacity:1;z-index:0;}
+}
+
+@keyframes galu_meu {
+	0% {/*transform: scale(1);*/ z-index:10; }
+	5% {transform: scale(1) rotate(0deg)}
+	/*30% {transform: scale(0.2); }*/
+	/*10% {transform: scale(0.001);}*/
+	17% {transform: scale(0.0) rotate(360deg);}
+	20.001% { transform: scale(0.001); z-index: -1;}
+	/*35.32% {transform: scale(1);}*/
+	79.99999999% {transform: scale(1) rotate(0deg); z-index: -1;}
+	80%{z-index: 0;}
+	100% {z-index: 0;}
+	/*100%{transform: scale(1); z-index: 0;}*/
+	/*
+	5% {transform: rotate(45deg) scale(0.9);}
+	100% {transform: rotate(360deg) scale(0.1);}
+	*/
+}
